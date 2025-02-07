@@ -8,5 +8,9 @@ describe('Calculator', () => {
   it('should return the number itself when given a single number', () => {
     expect(Calculator.add('1')).toBe(1);
   });
+
+  it('should return the sum of two numbers', () => {
+    expect(Calculator.add('1,5')).toBe(6);
+  });
   
 });
