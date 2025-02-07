@@ -12,5 +12,9 @@ describe('Calculator', () => {
   it('should return the sum of two numbers', () => {
     expect(Calculator.add('1,5')).toBe(6);
   });
+
+  it('should throw an error if there are negative numbers', () => {
+    expect(() => Calculator.add('1,-2,3')).toThrow('negative numbers not allowed -2');
+  });
   
 });
