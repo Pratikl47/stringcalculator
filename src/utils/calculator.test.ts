@@ -13,6 +13,14 @@ describe('Calculator', () => {
     expect(Calculator.add('1,5')).toBe(6);
   });
 
+  it('should handle new lines between numbers', () => {
+    expect(Calculator.add('1\n2,3')).toBe(6);
+  });
+
+  it('should handle custom delimiters', () => {
+    expect(Calculator.add('//;\n1;2')).toBe(3);
+  });
+
   it('should throw an error if there are negative numbers', () => {
     expect(() => Calculator.add('1,-2,3')).toThrow('negative numbers not allowed -2');
   });
